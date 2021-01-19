@@ -9,6 +9,20 @@ using namespace std;
 
 struct Node
 {
-  //tbd
+  SurveyData *data;
+  Node *next;
 };
 
+class LinkedList
+{
+public:
+  void addToList(int, int, int);
+  void print();
+
+  ~LinkedList(); //deconstructor
+
+private:
+  Node *sectorHead;
+  Node *exposureHead;
+  Node *speedHead;
+};

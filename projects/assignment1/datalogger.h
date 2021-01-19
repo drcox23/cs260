@@ -6,12 +6,15 @@
 
 using namespace std;
 
-class DataLogger
+class datalogger
 {
 public:
-  void addData();
-  void removeSector();
-  void containsSector();
+  void addData(int, int, int);
+  void removeSector(int);
+  bool containsSector(int);
   void printReport();
   void printSectorList();
+
+private:
+  LinkedList *list;
 };

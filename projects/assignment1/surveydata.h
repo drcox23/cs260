@@ -12,13 +12,14 @@ public:
   int getSector();
   int getExposure();
   int getSpeed();
-  void setSector(int);
-  void setExposure(int);
-  void setSpeed(int);
 
   SurveyData();              // default constructor
   SurveyData(int, int, int); // constructor with member parameters
   ~SurveyData();             // deconstructor
+
+  SurveyData(const SurveyData &cpy);
+
+  const SurveyData operator=(const SurveyData &cpy);
 
 private:
   int sector;
