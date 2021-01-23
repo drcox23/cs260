@@ -8,7 +8,7 @@ using namespace std;
 
 void datalogger::addData(int sector, int exposure, int speed)
 {
-  list->addToList(sector, exposure, speed);
+  list.addToList(sector, exposure, speed);
 }
 
 void datalogger::removeSector(int)
@@ -24,7 +24,7 @@ bool datalogger::containsSector(int)
 
 void datalogger::printReport()
 {
-  list->print();
+  list.print();
 }
 
 void datalogger::printSectorList()
@@ -32,3 +32,15 @@ void datalogger::printSectorList()
   //tbd
   cout << "printSectorList here" << endl;
 }
+
+datalogger::datalogger()
+{
+  //tbd
+}
+
+/*
+datalogger::~datalogger()
+{
+  delete list;
+}
+*/

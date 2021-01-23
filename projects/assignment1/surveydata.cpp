@@ -24,9 +24,9 @@ int SurveyData::getSpeed()
 
 SurveyData::SurveyData()
 {
-  sector = 0;
-  exposure = 0;
-  speed = 0;
+  sector = -1;
+  exposure = -1;
+  speed = -1;
 }
 
 SurveyData::SurveyData(int xsector, int xexposure, int xspeed)
@@ -41,6 +41,11 @@ SurveyData::SurveyData(const SurveyData &cpy)
   sector = cpy.sector;
   exposure = cpy.exposure;
   speed = cpy.speed;
+}
+
+SurveyData::~SurveyData()
+{
+  //tbd
 }
 
 const SurveyData SurveyData::operator=(const SurveyData &cpy)

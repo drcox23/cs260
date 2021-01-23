@@ -19,7 +19,10 @@ public:
   void addToList(int, int, int);
   void print();
 
+  LinkedList();  //constructor
   ~LinkedList(); //deconstructor
+  LinkedList(const LinkedList &cpy);
+  const LinkedList operator=(const LinkedList &cpy);
 
 private:
   Node *sectorHead;
