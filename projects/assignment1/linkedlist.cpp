@@ -14,27 +14,21 @@ void LinkedList::addToList(int sector, int exposure, int speed)
   newNode->data = dataAdd;
   newNode->next = NULL;
 
-  //cout << "check this function " << newNode->data->getSector() << endl;
-
+  // ***Insert for sectorHead ***
   if (!sectorHead)
   {
     sectorHead = newNode;
-    cout << "This is a check" << endl;
     return;
   }
 
   Node *current = sectorHead;
   Node *previous = NULL;
 
-  //cout << "This is current" << current->data->getSector();
-
   while (current)
   {
     if (current->data->getSector() > newNode->data->getSector())
     {
       newNode->next = current;
-      //current = newNode;
-      //cout << current->data->getSector() << " & " << current->data->getExposure();
 
       if (!previous)
       {
@@ -46,16 +40,85 @@ void LinkedList::addToList(int sector, int exposure, int speed)
       }
       return;
     }
-
     previous = current;
     current = current->next;
   }
   previous->next = newNode;
+
+  /*
+  // *** Insert for exposureHead ***
+  if (!exposureHead)
+  {
+    exposureHead = newNode;
+    return;
+  }
+
+  Node *expCurrent = exposureHead;
+  Node *expPrevious = NULL;
+
+  while (expCurrent)
+  {
+    if (expCurrent->data->getSector() > newNode->data->getSector())
+    {
+      newNode->next = expCurrent;
+
+      if (!expPrevious)
+      {
+        expCurrent = newNode;
+      }
+      else
+      {
+        expPrevious->next = newNode;
+      }
+      return;
+    }
+    expPrevious = expCurrent;
+    expCurrent = expCurrent->next;
+  }
+  expPrevious->next = newNode;
+*/
+  /*
+  // ***Insert for speedHead ***
+  if (!sectorHead)
+  {
+    sectorHead = newNode;
+    return;
+  }
+
+  Node *current = sectorHead;
+  Node *previous = NULL;
+
+  while (current)
+  {
+    if (current->data->getSector() > newNode->data->getSector())
+    {
+      newNode->next = current;
+
+      if (!previous)
+      {
+        sectorHead = newNode;
+      }
+      else
+      {
+        previous->next = newNode;
+      }
+      return;
+    }
+    previous = current;
+    current = current->next;
+  }
+  previous->next = newNode;
+  */
 }
 
 void LinkedList::print()
 {
-  cout << "Data by Sector" << endl;
+  //***Sector Print***
+  cout << "---------------------------------------------------------------------- "
+       << "\nData values" << endl
+       << "----------------------------------------------------------------------" << endl;
+  cout
+      << "Data by Sector" << endl;
 
   Node *secList = sectorHead;
 
@@ -64,6 +127,31 @@ void LinkedList::print()
     cout << "Sector: #" << secList->data->getSector() << " " << secList->data->getExposure() << "\% exposure, " << secList->data->getSpeed() << " km/hr windspeed" << endl;
     secList = secList->next;
   }
+
+  /*
+  //***Exposure Print***
+  cout << "Data by Exposure" << endl;
+
+  Node *expList = exposureHead;
+
+  while (expList)
+  {
+    cout << "Sector: #" << expList->data->getSector() << " " << expList->data->getExposure() << "\% exposure, " << expList->data->getSpeed() << " km/hr windspeed" << endl;
+    expList = expList->next;
+  }
+  /*
+  /*
+  //***Speed Print***
+  cout << "Data by Speed" << endl;
+
+  Node *spdList = speedHead;
+
+  while (spdList)
+  {
+    cout << "Sector: #" << spdList->data->getSector() << " " << spdList->data->getExposure() << "\% exposure, " << spdList->data->getSpeed() << " km/hr windspeed" << endl;
+    spdList = spdList->next;
+  }
+  */
 }
 
 LinkedList::LinkedList()
