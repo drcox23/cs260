@@ -6,11 +6,12 @@
 #include "surveydata.h"
 
 using namespace std;
-
 struct Node
 {
   SurveyData *data;
-  Node *next;
+  Node *nextSector;
+  Node *nextExposure;
+  Node *nextSpeed;
 };
 
 class LinkedList

@@ -15,8 +15,6 @@ public:
   void printReport();
   void printSectorList();
 
-  datalogger();
-  // ~datalogger();
 
 private:
   LinkedList list;

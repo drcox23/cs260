@@ -32,15 +32,3 @@ void datalogger::printSectorList()
   //tbd
   cout << "printSectorList here" << endl;
 }
-
-datalogger::datalogger()
-{
-  //tbd
-}
-
-/*
-datalogger::~datalogger()
-{
-  delete list;
-}
-*/
