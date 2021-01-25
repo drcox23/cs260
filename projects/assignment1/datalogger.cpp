@@ -17,9 +17,9 @@ void datalogger::removeSector(int)
   cout << "removeSector here" << endl;
 }
 
-bool datalogger::containsSector(int)
+bool datalogger::containsSector(int sectorCheck)
 {
-  return false;
+  return list.sectorContains(sectorCheck);
 }
 
 void datalogger::printReport()

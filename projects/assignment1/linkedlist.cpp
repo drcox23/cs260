@@ -247,6 +247,28 @@ void LinkedList::print()
   }
 }
 
+bool LinkedList::sectorContains(int sectorCheck)
+{
+  Node *previous = NULL;
+  Node *current = sectorHead;
+
+  if (current && current->data->getSector() == sectorCheck)
+  {
+    return true;
+  }
+
+  while (current && current->data->getSector() != sectorCheck)
+  {
+    if (current->data->getSector() == sectorCheck)
+    {
+      return true;
+    }
+    previous = current;
+    current = current->nextSector;
+  }
+  return false;
+}
+
 LinkedList::LinkedList()
 {
   sectorHead = NULL;

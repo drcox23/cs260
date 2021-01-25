@@ -19,6 +19,8 @@ class LinkedList
 public:
   void addToList(int, int, int);
   void print();
+  void sectorRemove();
+  bool sectorContains(int);
 
   LinkedList();  //constructor
   ~LinkedList(); //deconstructor
