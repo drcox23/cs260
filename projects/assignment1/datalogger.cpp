@@ -11,10 +11,9 @@ void datalogger::addData(int sector, int exposure, int speed)
   list.addToList(sector, exposure, speed);
 }
 
-void datalogger::removeSector(int)
+void datalogger::removeSector(int remSector)
 {
-  //tbd
-  cout << "removeSector here" << endl;
+  list.sectorRemove(remSector);
 }
 
 bool datalogger::containsSector(int sectorCheck)

@@ -269,6 +269,28 @@ bool LinkedList::sectorContains(int sectorCheck)
   return false;
 }
 
+void LinkedList::sectorRemove(int remSector)
+{
+  while (sectorContains(remSector))
+  {
+    Node *current = sectorHead;
+    Node *previous = NULL;
+    while (current && current->data->getSector() == remSector)
+    {
+      if (!previous)
+      {
+        sectorHead = sectorHead->nextSector;
+      }
+      previous->nextSector = current->nextSector;
+      previous->nextExposure = current->nextExposure;
+      previous->nextSpeed = current->nextSpeed;
+      delete current;
+    }
+    previous = current;
+    current = current->nextSector;
+  }
+}
+
 LinkedList::LinkedList()
 {
   sectorHead = NULL;

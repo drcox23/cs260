@@ -19,7 +19,7 @@ class LinkedList
 public:
   void addToList(int, int, int);
   void print();
-  void sectorRemove();
+  void sectorRemove(int);
   bool sectorContains(int);
 
   LinkedList();  //constructor
