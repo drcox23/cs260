@@ -21,6 +21,7 @@ public:
   void print();
   void sectorRemove(int);
   bool sectorContains(int);
+  void printBadSectors();
 
   LinkedList();  //constructor
   ~LinkedList(); //deconstructor

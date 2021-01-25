@@ -28,6 +28,5 @@ void datalogger::printReport()
 
 void datalogger::printSectorList()
 {
-  //tbd
-  cout << "printSectorList here" << endl;
+  list.printBadSectors();
 }

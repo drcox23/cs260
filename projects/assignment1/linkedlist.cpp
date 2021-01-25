@@ -291,6 +291,25 @@ void LinkedList::sectorRemove(int remSector)
   }
 }
 
+void LinkedList::printBadSectors()
+{
+  Node *secList = sectorHead;
+
+  while (secList)
+  {
+    cout << secList->data->getSector();
+    if (secList->nextSector == NULL)
+    {
+      cout << "\n";
+    }
+    else
+    {
+      cout << ", ";
+    }
+    secList = secList->nextSector;
+  }
+}
+
 LinkedList::LinkedList()
 {
   sectorHead = NULL;
