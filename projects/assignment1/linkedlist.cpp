@@ -54,28 +54,28 @@ void LinkedList::addToList(int sector, int exposure, int speed)
     return;
   }
 
-  current = exposureHead;
-  previous = NULL;
-  while (current)
+  Node *expCurrent = exposureHead;
+  Node *expPrevious = NULL;
+  while (expCurrent)
   {
-    if (current->data->getExposure() > dataAdd->getExposure())
+    if (expCurrent->data->getExposure() > dataAdd->getExposure())
     {
-      newNode->nextExposure = current;
+      newNode->nextExposure = expCurrent;
 
-      if (!previous)
+      if (!expPrevious)
       {
         exposureHead = newNode;
       }
       else
       {
-        previous->nextExposure = newNode;
+        expPrevious->nextExposure = newNode;
       }
       return;
     }
-    previous = current;
-    current = current->nextExposure;
+    expPrevious = expCurrent;
+    expCurrent = expCurrent->nextExposure;
   }
-  previous->nextExposure = newNode;
+  expPrevious->nextExposure = newNode;
 
   // ***Insert for speedHead ***
   if (!speedHead)
