@@ -16,7 +16,9 @@ public:
   const LinkedList operator=(const LinkedList &cpy);
 
   void addToList(int, structure_type);
-  bool takeFromBack();
+  bool takeFromBack(int);
+
+  int currentSect;
 
 private:
   Node *head;

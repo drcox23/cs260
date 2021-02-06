@@ -9,19 +9,19 @@ void builder::setBuilderNum(int xbuilderNum)
 
 void builder::addRequest(int sectorNum, structure_type type)
 {
-  //tbd
+  cout << "Builder #" << builderNum << ": Received request to build a " << str(type) << " in sector " << sectorNum << endl;
   list.addToList(sectorNum, type);
 }
 
 bool builder::doCycle()
 {
-  if (!list.takeFromBack())
+  if (!list.takeFromBack(builderNum))
   {
     return false;
   }
   else
   {
-    return false;
+    return true;
   }
 }
 
