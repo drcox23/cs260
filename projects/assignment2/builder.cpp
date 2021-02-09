@@ -15,12 +15,22 @@ void builder::addRequest(int sectorNum, structure_type type)
 
 bool builder::doCycle()
 {
-  if (!list.takeFromBack(builderNum))
+
+  if (!list.checktail())
   {
     return false;
   }
   else
   {
+    int sectNum = list.getTailSector();
+    structure_type infoType = list.getTailStructure();
+
+    event stackData = event(sectNum, infoType);
+
+    newStack.push(stackData);
+
+    list.takeFromBack(builderNum);
+
     return true;
   }
 }

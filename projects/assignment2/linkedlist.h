@@ -1,6 +1,8 @@
-#include "event.h"
+
+#include "stack.h"
 
 using namespace std;
+
 struct Node
 {
   event *data;
@@ -16,7 +18,11 @@ public:
   const LinkedList operator=(const LinkedList &cpy);
 
   void addToList(int, structure_type);
-  bool takeFromBack(int);
+  void takeFromBack(int);
+  bool checktail();
+
+  int getTailSector();
+  structure_type getTailStructure();
 
   int currentSect;
 

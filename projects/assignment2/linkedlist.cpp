@@ -20,13 +20,30 @@ void LinkedList::addToList(int sectorNum, structure_type type)
   }
 }
 
-bool LinkedList::takeFromBack(int builderNum)
+bool LinkedList::checktail()
 {
   if (!tail)
   {
-
     return false;
   }
+  else
+  {
+    return true;
+  }
+}
+
+int LinkedList::getTailSector()
+{
+  return tail->data->getSectorNum();
+}
+
+structure_type LinkedList::getTailStructure()
+{
+  return tail->data->getStructureType();
+}
+
+void LinkedList::takeFromBack(int builderNum)
+{
 
   if (currentSect == tail->data->getSectorNum())
   {
@@ -59,7 +76,7 @@ bool LinkedList::takeFromBack(int builderNum)
     }
     delete removeTail;
 
-    return true;
+    return;
   }
   else
   {
@@ -95,7 +112,7 @@ bool LinkedList::takeFromBack(int builderNum)
     }
     delete removeTail;
 
-    return true;
+    return;
   }
 }
 
