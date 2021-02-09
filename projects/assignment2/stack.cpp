@@ -101,7 +101,7 @@ bool stack::push(const event &eData)
   return true;
 }
 
-bool stack::pop(event &eData)
+bool stack::pop()
 {
   bool status = false;
 
@@ -109,7 +109,7 @@ bool stack::pop(event &eData)
 
   if (!isEmpty())
   {
-    eData = top->data;
+    //eData = top->data;
     temp = top;
     top = top->next;
     delete temp;
@@ -133,6 +133,31 @@ bool stack::peek(event &eData) const
     status = true;
   }
   return status;
+}
+
+void stack::takeFromTop(int builderNum)
+{
+  sCurrSect = top->data.getSectorNum();
+  while (top)
+  {
+
+    if (sCurrSect == top->data.getSectorNum())
+    {
+      cout << "Builder #" << builderNum << ": Connected to a " << str(top->data.getStructureType()) << " in sector " << sCurrSect << endl;
+
+      pop();
+    }
+    else
+    {
+      cout << "Builder #" << builderNum << ": Moving to sector " << top->data.getSectorNum() << endl;
+
+      sCurrSect = top->data.getSectorNum();
+      cout << "Builder #" << builderNum << ": Connected to a " << str(top->data.getStructureType()) << " in sector " << sCurrSect << endl;
+
+      pop();
+    }
+  }
+  cout << "Builder #" << builderNum << ": Arrived at base." << endl;
 }
 
 /*

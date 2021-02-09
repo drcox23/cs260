@@ -17,12 +17,16 @@ public:
   const stack &operator=(const stack &);
 
   bool push(const event &);
-  bool pop(event &);
+  bool pop();
 
   bool peek(event &) const;
   bool isEmpty(void) const;
 
+  void takeFromTop(int);
+
   //friend ostream &operator<<(ostream &out, stack &);
+
+  int sCurrSect;
 
 private:
   stackNode *top;

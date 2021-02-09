@@ -37,5 +37,11 @@ bool builder::doCycle()
 
 void builder::returnHome()
 {
-  cout << "yet to implement" << endl;
+  //cout << "yet to implement" << endl;
+  if (!newStack.isEmpty())
+  {
+    newStack.takeFromTop(builderNum);
+  }
+
+  return;
 }
