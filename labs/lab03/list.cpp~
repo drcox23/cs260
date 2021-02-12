@@ -1,0 +1,37 @@
+#include <iostream>
+#include "list.h"
+
+using namespace std;
+
+void reverse(node * head, node *& newHead)
+{
+  if (!head)
+    {
+      return;
+    }
+
+  if(!head->next)
+    {
+      newHead = head;
+      return;
+    }
+  
+  node * temp = head;
+  reverse(temp->next, newHead);
+  temp->next->next=head;
+  temp->next=NULL; 
+  
+}
+ 
+
+ void removeLast(node *& head)
+ {
+   
+   if(!head)
+     {
+       return;
+     }
+   
+ }
+ 
+
